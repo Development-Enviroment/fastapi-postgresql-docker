@@ -1,0 +1,17 @@
+alembic
+fastapi
+flake8
+gunicorn
+isort
+mypy
+mypy-extensions
+passlib
+psycopg2
+pydantic
+python-dotenv
+python-jose
+python-multipart
+SQLAlchemy
+SQLAlchemy-Utils
+python-dateutil
+uvicorn[standard]

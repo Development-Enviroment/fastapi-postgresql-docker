@@ -1,0 +1,20 @@
+version: "3.8"
+
+# FastAPI
+services:
+  api:
+    # build: src/. # Dockerfileのpath
+    build:
+      context: .
+      dockerfile: src/Dockerfile.prod # Dockerfileのpath
+    expose:
+      - 8000
+    ports:
+      - 8000:8000 # ホストマシンのポート8000を、docker内のポート8000に接続する
+    restart: always # 接続できなかった際に常に再起動をかける
+    environment: # 環境変数をコンテナに展開
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
